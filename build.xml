@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- Ant file - Apache Ant 1.8.1 -->
+
+<project name="OptiSoccer" default="jar" basedir=".">
+  
+  <path id="project.class.path">
+    
+  </path>
+  
+  <target name="jar">
+    <delete dir="bin2" />
+    <mkdir dir="bin2" />
+    <javac includeAntRuntime="false" classpath="" encoding="ISO-8859-1" srcdir="src" destdir="bin2">
+      <classpath refid="project.class.path" />
+    </javac>
+    <delete dir="dist" />
+    <mkdir dir="dist" />
+    <jar destfile="dist/Simplex.jar" basedir="bin2"  manifest="manifest.mf" />
+    <echo file="dist/Simplex.bat" message="java -Xms128M -Xmx512M -jar Simplex.jar" />
+    <delete dir="bin2" />
+  </target>
+  
+</project>
